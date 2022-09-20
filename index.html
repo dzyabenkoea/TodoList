@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="index.css">
+    <title>Document</title>
+</head>
+<body>
+<div id="app">
+    <div id="project-window">
+        <h3 id="project-window-header">Проекты</h3>
+        <hr>
+        <ul id="project-list">
+            <li>Проект 1</li>
+            <li>Проект 2</li>
+            <li>Проект 3</li>
+        </ul>
+        <button id="add-project-button">+</button>
+    </div>
+    <div id="tasks-window">
+        <div id="tasks-window-header">
+            <div id="projects-menu" data-hidden="false"></div>
+            <h1>Проект 1</h1>
+        </div>
+        <div class="task-list">
+            <div class="task">
+                <input type="checkbox">
+                <p class="task-text">Починить сломанный скрипт</p>
+            </div>
+            <div class="task">
+                <input type="checkbox">
+                <p class="task-text">Починить сломанный скрипт</p>
+            </div>
+            <div class="task">
+                <input type="checkbox">
+                <p class="task-text">Починить сломанный скрипт</p>
+            </div>
+            <div class="task">
+                <input type="checkbox">
+                <p class="task-text">Починить сломанный скрипт</p>
+            </div>
+        </div>
+        <input type="text" id="new-task-input" placeholder="Новая задача...">
+    </div>
+</div>
+</body>
+</html>
+<script src="script.js"></script>
