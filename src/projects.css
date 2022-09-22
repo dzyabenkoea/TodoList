@@ -11,16 +11,21 @@
     border: 1px solid lightgray;
 }
 
+.remove-button {
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
 .project-list-element {
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    color: gray;
 }
 
-.remove-button {
-    opacity: 0;
-    transition: opacity 0.2s;
+.project-list-element.active{
+    color: black;
 }
 
 .project-list-element:hover .remove-button {
@@ -33,7 +38,7 @@
 
 .remove-icon{
     color: lightgray;
-    transition: color 0.2s;
+    transition: color 0.1s;
 }
 
 .remove-button:hover .remove-icon{
