@@ -1,0 +1,48 @@
+
+.task {
+    display: flex;
+    gap: 0.5rem;
+    padding: 1rem;
+}
+
+#tasks-window {
+    padding: 2rem;
+    width: 80%;
+}
+
+#task-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.task:hover {
+    background-color: whitesmoke;
+    border-radius: 0.1rem;
+}
+
+.task-text {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.checker {
+    width: 0.5rem;
+    align-self: flex-start;
+    margin-top: 0.3rem;
+    margin-right: 0.2rem;
+}
+
+#tasks-window-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+#new-task-input {
+    padding: 0.5rem;
+    width: min(500px, 100%);
+    border-radius: 0.5rem;
+    border: 1px solid lightgray;
+}
