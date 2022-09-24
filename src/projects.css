@@ -14,6 +14,7 @@
 .remove-button {
     opacity: 0;
     transition: opacity 0.2s;
+    cursor: pointer;
 }
 
 .project-list-element {
@@ -22,9 +23,13 @@
     justify-content: space-between;
     align-items: center;
     color: gray;
+    transition: background-color 0.1s;
+    cursor: pointer;
+    padding-left: 1rem;
+    border-radius: 0.5rem;
 }
 
-.project-list-element.active{
+.project-list-element.active {
     color: black;
 }
 
@@ -32,20 +37,24 @@
     opacity: 100%;
 }
 
+.project-list-element:hover{
+    background-color: whitesmoke;
+}
+
 .remove-button {
     background-color: transparent;
 }
 
-.remove-icon{
+.remove-icon {
     color: lightgray;
     transition: color 0.1s;
 }
 
-.remove-button:hover .remove-icon{
+.remove-button:hover .remove-icon {
     color: #ff3838;
 }
 
-.remove-button:hover{
+.remove-button:hover {
     background-color: whitesmoke;
 }
 
@@ -90,6 +99,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
+    transition: background-color 0.1s;
+
+    cursor: pointer;
+}
+
+#add-project-button:hover {
+    background-color: lightgray;
 }
 
 @media (max-width: 460px) {
