@@ -63,7 +63,7 @@ const ProjectManager = (function () {
             div.innerHTML = `
             <input type="text" placeholder="Название проекта" id="new-project-name">
             <button id="new-project-add-button" type="button">
-                <i class="bi bi-plus"></i>
+                <i class="bi bi-check"></i>
             </button>
             <button id="new-project-cancel-button" type="button">
                 <i class="bi bi-x"></i>
