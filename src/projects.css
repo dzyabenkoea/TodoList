@@ -32,7 +32,7 @@
     opacity: 100%;
 }
 
-.project-list-element:hover{
+.project-list-element:hover {
     background-color: whitesmoke;
 }
 
@@ -111,8 +111,24 @@
     background-color: lightgray;
 }
 
-#project-window-close-button{
+#project-window-close-button {
     display: none;
+}
+
+#new-project-window {
+    display: flex;
+    justify-content: space-between;
+    /*padding-left: 1rem;*/
+    width: 100%;
+}
+
+#new-project-window input {
+    border: solid lightgray 1px;
+    border-radius: 0.2rem;
+}
+
+#new-task-input{
+    padding-inline: 1rem !important;
 }
 
 @media (max-width: 460px) {
@@ -137,13 +153,17 @@
         display: block;
     }
 
-    #project-window-close-button{
+    #project-window-close-button {
         display: block;
     }
 
-    .header-container{
+    .header-container {
         display: flex;
         justify-content: space-between;
         align-items: center;
+    }
+
+    .remove-button {
+        opacity: 100%;
     }
 }
