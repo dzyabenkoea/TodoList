@@ -389,6 +389,7 @@ const ProjectManager = (function () {
         addProject,
         removeProject,
         setActiveProject,
+        freshStart,
         tests: {
             run() {
                 tests.run()
@@ -403,3 +404,4 @@ const ProjectManager = (function () {
 })()
 
 ProjectManager.tests.run()
+ProjectManager.freshStart()
