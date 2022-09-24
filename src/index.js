@@ -32,6 +32,10 @@ const ProjectManager = (function () {
         }
 
         function renderTasks() {
+            // Обновить название открытого проекта
+            document.querySelector('#current-project-name').textContent = currentProject.name
+
+            // Обновить список задач
             const taskContainer = document.querySelector('#task-list')
             taskContainer.innerHTML = tasksHTML(currentProject.tasks)
         }
@@ -62,12 +66,14 @@ const ProjectManager = (function () {
             div.id = 'new-project-window'
             div.innerHTML = `
             <input type="text" placeholder="Название проекта" id="new-project-name">
-            <button id="new-project-add-button" type="button">
-                <i class="bi bi-check"></i>
-            </button>
-            <button id="new-project-cancel-button" type="button">
-                <i class="bi bi-x"></i>
-            </button>
+            <div>
+                <button id="new-project-add-button" type="button">
+                    <i class="bi bi-check"></i>
+                </button>
+                <button id="new-project-cancel-button" type="button">
+                    <i class="bi bi-x"></i>
+                </button>
+            </div>
             `
 
             function addProjectHandler(event) {
