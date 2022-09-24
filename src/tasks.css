@@ -3,6 +3,28 @@
     display: flex;
     gap: 0.5rem;
     padding: 1rem;
+    width: 100%;
+
+    justify-content: space-between;
+    align-items: center;
+}
+
+.task-content {
+    display: flex;
+    gap: 1rem;
+}
+
+.remove-task-button {
+    opacity: 0;
+    cursor: pointer;
+}
+
+.task:hover .remove-task-button {
+    opacity: 100;
+}
+
+.remove-task-button:hover {
+    color: #ff3838;
 }
 
 #tasks-window {
