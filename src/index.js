@@ -55,25 +55,33 @@ const ProjectManager = (function () {
 
         function showNewProjectWindow(addClickedHandler) {
 
+            const existingDiv = document.querySelector('#new-project-window')
+            if (existingDiv) return;
+
             const div = document.createElement('div')
             div.id = 'new-project-window'
             div.innerHTML = `
             <input type="text" placeholder="Название проекта" id="new-project-name">
-            <button id="new-project-cancel-button" type="button">
-                <i class="bi bi-x"></i>
-            </button>
             <button id="new-project-add-button" type="button">
                 <i class="bi bi-plus"></i>
             </button>
+            <button id="new-project-cancel-button" type="button">
+                <i class="bi bi-x"></i>
+            </button>
             `
 
-            function handler(event) {
+            function addProjectHandler(event) {
                 const projectName = div.querySelector('#new-project-name')
                 addClickedHandler(projectName.value)
                 div.remove()
             }
 
-            div.querySelector("#new-project-add-button").addEventListener('click', handler.bind(this))
+            function cancelHandler(event) {
+                div.remove()
+            }
+
+            div.querySelector("#new-project-add-button").addEventListener('click', addProjectHandler.bind(this))
+            div.querySelector("#new-project-cancel-button").addEventListener('click', cancelHandler.bind(this))
 
             const projectList = document.querySelector('#project-list')
             projectList.append(div)
@@ -370,7 +378,7 @@ const ProjectManager = (function () {
 
     })()
 
-    function freshStart(){
+    function freshStart() {
         projects = []
         // Проект по умолчанию, если других проектов нет
         addProject('Пустой проект')
