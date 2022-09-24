@@ -1,14 +1,9 @@
 
-#project-window {
-    width: 20%;
-    padding-inline: 1rem;
-}
-
 #projects-menu {
     display: none;
-    width: 2rem;
-    height: 2rem;
-    border: 1px solid lightgray;
+    /*width: 2rem;*/
+    /*height: 2rem;*/
+    /*border: 1px solid lightgray;*/
 }
 
 .remove-button {
@@ -63,6 +58,13 @@
 }
 
 #project-window {
+    width: 20%;
+    height: 100%;
+    padding-inline: 1rem;
+    z-index: 5;
+}
+
+#project-window {
     display: flex;
     flex-direction: column;
     padding-top: 5rem;
@@ -109,10 +111,15 @@
     background-color: lightgray;
 }
 
+#project-window-close-button{
+    display: none;
+}
+
 @media (max-width: 460px) {
     #project-window {
+        padding-top: 2rem;
         display: none;
-        width: 80%;
+        width: 100%;
     }
 
     #project-window.show {
@@ -128,5 +135,15 @@
 
     #projects-menu {
         display: block;
+    }
+
+    #project-window-close-button{
+        display: block;
+    }
+
+    .header-container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
 }

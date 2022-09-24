@@ -10,7 +10,9 @@
 <body>
 <div id="app">
     <div id="project-window">
-        <h3 id="project-window-header">Проекты</h3>
+        <div class="header-container"> <h3 id="project-window-header">Проекты</h3>
+            <button id="project-window-close-button"><i class="bi bi-chevron-right"></i></button>
+        </div>
         <hr>
         <ul id="project-list">
         </ul>
@@ -18,10 +20,10 @@
     </div>
     <div id="tasks-window">
         <div id="tasks-window-header">
-            <div id="projects-menu" data-hidden="false">
+            <div id="projects-menu" class="show">
                 <button><i class="bi bi-list"></i></button>
             </div>
-            <h1 id="current-project-name">Проект 1</h1>
+            <h1 id="current-project-name">Название проекта</h1>
         </div>
         <div id="task-list">
             <div class="task">
@@ -41,7 +43,10 @@
                 <p class="task-text">Починить сломанный скрипт</p>
             </div>
         </div>
-        <input type="text" id="new-task-input" placeholder="Новая задача...">
+        <div class="new-task-container">
+            <input type="text" id="new-task-input" placeholder="Новая задача...">
+            <button id="new-task-add-button"><i class="bi bi-check-lg"></i></button>
+        </div>
     </div>
 </div>
 </body>

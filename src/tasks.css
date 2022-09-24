@@ -2,7 +2,8 @@
 .task {
     display: flex;
     gap: 0.5rem;
-    padding: 1rem;
+    padding-block: 0.2rem;
+    padding-inline: 1rem;
     width: 100%;
 
     justify-content: space-between;
@@ -46,7 +47,7 @@
 
 .task-text {
     margin: 0;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
 }
 
 .checker {
@@ -67,4 +68,34 @@
     width: min(500px, 100%);
     border-radius: 0.5rem;
     border: 1px solid lightgray;
+}
+
+.new-task-container {
+    display: flex;
+    gap: 0.5rem;
+}
+
+@media (max-width: 460px) {
+
+    #tasks-window {
+        padding: 2rem;
+        width: 100%;
+    }
+
+    .new-task-container {
+        position: absolute;
+        left: 0;
+        bottom: 1rem;
+        margin: auto 0;
+        align-self: center;
+        justify-self: center;
+        width: 100%;
+        padding-inline: 2rem;
+        z-index: 1;
+    }
+
+    .remove-task-button {
+        opacity: 100;
+        cursor: pointer;
+    }
 }

@@ -88,6 +88,14 @@ const ProjectManager = (function () {
             div.querySelector('input').focus()
         }
 
+        function showProjectList(show = true) {
+            const window = document.querySelector('#project-window')
+            if (show)
+                window.classList.add('show')
+            else
+                window.classList.remove('show')
+        }
+
         const tests = function () {
             const _tests = [function test_render() {
                 projects = []
@@ -102,7 +110,7 @@ const ProjectManager = (function () {
             }
         }()
 
-        return {renderProjects, renderTasks, showNewProjectWindow, tests}
+        return {renderProjects, renderTasks, showNewProjectWindow, showProjectList, tests}
     })()
 
     function projectsCount() {
@@ -288,11 +296,21 @@ const ProjectManager = (function () {
 
         function mapAddTask() {
             const input = document.querySelector('#new-task-input')
+
+            function handleTaskAdd() {
+                TaskManager.addTask(currentProject.id, input.value)
+                input.value = ''
+            }
+
             input.addEventListener('keyup', event => {
                 if (event.key === 'Enter') {
-                    TaskManager.addTask(currentProject.id, input.value)
-                    input.value = ''
+                    handleTaskAdd()
                 }
+            })
+
+            const button = document.querySelector('#new-task-add-button')
+            button.addEventListener('click', event => {
+                handleTaskAdd()
             })
         }
 
@@ -313,11 +331,25 @@ const ProjectManager = (function () {
             })
         }
 
+        function mapProjectListMenuClick() {
+            document.querySelector('#projects-menu button').addEventListener('click', (event) => {
+                Renderer.showProjectList()
+            })
+        }
+
+        function mapProjectListReturn() {
+            document.querySelector('#project-window-close-button').addEventListener('click', (event) => {
+                Renderer.showProjectList(false)
+            })
+        }
+
         mapRemoveProject()
         mapAddProject()
         mapAddTask()
         mapProjectListAction()
         mapTaskListAction()
+        mapProjectListMenuClick()
+        mapProjectListReturn()
 
         const tests = {
             run: function () {
