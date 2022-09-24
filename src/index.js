@@ -85,6 +85,7 @@ const ProjectManager = (function () {
 
             const projectList = document.querySelector('#project-list')
             projectList.append(div)
+            div.querySelector('input').focus()
         }
 
         const tests = function () {
