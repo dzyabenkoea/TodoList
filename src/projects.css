@@ -122,12 +122,13 @@
     width: 100%;
 }
 
-#new-project-window input {
+#new-project-name {
+    padding-inline: 1rem;
     border: solid lightgray 1px;
     border-radius: 0.2rem;
 }
 
-#new-task-input{
+#new-task-input {
     padding-inline: 1rem !important;
 }
 
