@@ -192,7 +192,6 @@ const ProjectManager = (function () {
         ]
 
         function run() {
-            Renderer.tests.run()
             _tests.forEach(test => {
                 test()
             })
