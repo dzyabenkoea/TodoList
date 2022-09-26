@@ -31,6 +31,9 @@
 #tasks-window {
     padding: 2rem;
     width: 80%;
+
+    display: flex;
+    flex-direction: column;
 }
 
 #task-list {
@@ -38,6 +41,7 @@
     flex-direction: column;
     gap: 0.5rem;
     margin-bottom: 1rem;
+    overflow: auto;
 }
 
 .task:hover {
@@ -83,15 +87,13 @@
     }
 
     .new-task-container {
-        position: absolute;
-        left: 0;
-        bottom: 1rem;
-        margin: auto 0;
         align-self: center;
         justify-self: center;
         width: 100%;
-        padding-inline: 2rem;
-        z-index: 1;
+    }
+
+    #task-list {
+        flex-grow: 1;
     }
 
     .remove-task-button {
