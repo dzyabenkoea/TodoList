@@ -332,6 +332,7 @@ const ProjectManager = (function () {
                     event.cancelBubble = true
                     const projectListElement = target.closest('.project-list-element')
                     ProjectManager.setActiveProject(projectListElement.dataset.projectId)
+                    Renderer.showProjectList(false)
                 }
             })
         }
