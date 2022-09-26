@@ -397,6 +397,7 @@ const ProjectManager = (function () {
                         console.assert(taskElement === null, 'Task was deleted but still present on the page')
                     },
                     function test_markFinishedClick() {
+                        projects = []
                         const project = addProject('temp')
                         const task = TaskManager.addTask(project.id, 'temp-name')
                         const checkBoxElement = document.querySelector(`.task[data-task-id="${task.id}"] input[type="checkbox"]`)
