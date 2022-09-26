@@ -434,7 +434,6 @@ const ProjectManager = (function () {
                 tests.run()
                 TaskManager.tests.run()
                 EventMapper.tests.run()
-                EventMapper.tests.run()
                 freshStart()
             }
         },
