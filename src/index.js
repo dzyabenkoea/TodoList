@@ -66,7 +66,7 @@ const ProjectManager = (function () {
             div.id = 'new-project-window'
             div.innerHTML = `
             <input type="text" placeholder="Название проекта" id="new-project-name">
-            <div>
+            <div class="inline-button-container">
                 <button id="new-project-add-button" type="button">
                     <i class="bi bi-check"></i>
                 </button>
