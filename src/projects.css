@@ -55,16 +55,16 @@
 
 .project-text {
     margin: 0;
+    word-wrap: anywhere;
 }
 
 #project-window {
-    width: 20%;
     height: 100%;
     padding-inline: 1rem;
     z-index: 5;
-}
 
-#project-window {
+    /*flex-basis: 20rem;*/
+
     display: flex;
     flex-direction: column;
     padding-top: 5rem;
@@ -118,14 +118,18 @@
 #new-project-window {
     display: flex;
     justify-content: space-between;
-    /*padding-left: 1rem;*/
     width: 100%;
+}
+
+.inline-button-container{
+    display: flex;
 }
 
 #new-project-name {
     padding-inline: 1rem;
     border: solid lightgray 1px;
     border-radius: 0.2rem;
+    width: 100%;
 }
 
 #new-task-input {
@@ -166,5 +170,23 @@
 
     .remove-button {
         opacity: 100%;
+    }
+}
+
+@media (max-width: 870px){
+    #project-window{
+        flex-shrink: 0.5;
+    }
+    #tasks-window{
+        flex-shrink: 1.5;
+    }
+}
+
+@media (max-width: 666px){
+    #project-window{
+        flex-shrink: 1.2;
+    }
+    #tasks-window{
+        flex-shrink: 0.8;
     }
 }
