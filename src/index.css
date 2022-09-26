@@ -19,4 +19,10 @@ button {
     /*padding-inline: 1.5rem;*/
     border-radius: 0.5rem;
     border: none;
+    transition: background-color 0.1s;
+}
+
+button:hover {
+    background-color: lightgray;
+    cursor: pointer;
 }
