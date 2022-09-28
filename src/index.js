@@ -23,7 +23,7 @@ const ProjectManager = (function () {
                 html += `
                 <li class="project-list-element${project.id === currentProject.id ? activeProject : ''}" data-project-id=${project.id}>
                     <p class="project-text">${project.name}</p>
-                    <button type="button" class="remove-button">
+                    <button type="button" class="remove-project-button">
                     <i class="remove-icon bi bi-trash-fill"></i>
                     </button>
                 </li>`
@@ -274,7 +274,7 @@ const ProjectManager = (function () {
         function mapRemoveProject() {
             const projectList = document.querySelector('#project-list')
             projectList.addEventListener('click', event => {
-                const button = event.target.closest('.remove-button')
+                const button = event.target.closest('.remove-project-button')
                 if (button !== null) {
                     const task = button.closest('.project-list-element')
                     ProjectManager.removeProject(task.dataset.projectId)
@@ -323,9 +323,9 @@ const ProjectManager = (function () {
             const projectList = document.querySelector('#project-list')
             projectList.addEventListener('click', event => {
                 const target = event.target
-                if (target.closest('.remove-button')) {
+                if (target.closest('.remove-project-button')) {
                     event.cancelBubble = true
-                    const removeButton = target.closest('.remove-button')
+                    const removeButton = target.closest('.remove-project-button')
                     const projectListElement = removeButton.closest('.project-list-element')
                     ProjectManager.removeProject(projectListElement.dataset.id)
                 } else if (target.closest('.project-list-element')) {
@@ -380,7 +380,7 @@ const ProjectManager = (function () {
                         addProject('Проект1')
 
                         const projectElement = document.querySelector(`[data-project-id="${project.id}"]`)
-                        const button = projectElement.querySelector('.remove-button')
+                        const button = projectElement.querySelector('.remove-project-button')
                         button.click()
 
                         console.assert(getProject(project.id) === null, 'Project was removed but is still present')
