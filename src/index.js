@@ -65,7 +65,7 @@ const ProjectManager = (function () {
             const div = document.createElement('div')
             div.id = 'new-project-window'
             div.innerHTML = `
-            <input type="text" placeholder="Название проекта" id="new-project-name">
+            <input type="text" placeholder="Название проекта" id="new-project-name" required>
             <div class="inline-button-container">
                 <button id="new-project-add-button" type="button">
                     <i class="bi bi-check"></i>
@@ -78,8 +78,14 @@ const ProjectManager = (function () {
 
             function addProjectHandler(event) {
                 const projectName = div.querySelector('#new-project-name')
-                addClickedHandler(projectName.value)
-                div.remove()
+
+                if (projectName.validity.valid) {
+                    addClickedHandler(projectName.value)
+                    div.remove()
+                } else {
+                    projectName.setCustomValidity('Название проекта не может быть пустым')
+                    projectName.reportValidity()
+                }
             }
 
             function cancelHandler(event) {
@@ -303,8 +309,13 @@ const ProjectManager = (function () {
             const input = document.querySelector('#new-task-input')
 
             function handleTaskAdd() {
-                TaskManager.addTask(currentProject.id, input.value)
-                input.value = ''
+                // fill check
+                if (input.validity.valid) {
+                    TaskManager.addTask(currentProject.id, input.value)
+                    input.value = ''
+                } else {
+                    input.reportValidity()
+                }
             }
 
             input.addEventListener('keyup', event => {

@@ -116,7 +116,7 @@
     background-color: lightgray;
 }
 
-.inline-button-container{
+.inline-button-container {
     display: flex;
     gap: 0.2rem;
 }
@@ -126,6 +126,10 @@
     border: solid lightgray 1px;
     border-radius: 0.5rem;
     width: 100%;
+}
+
+#new-project-name:invalid {
+    border: 2px solid red;
 }
 
 #new-task-input {
@@ -169,20 +173,22 @@
     }
 }
 
-@media (max-width: 870px){
-    #project-window{
+@media (max-width: 870px) {
+    #project-window {
         flex-shrink: 0.5;
     }
-    #tasks-window{
+
+    #tasks-window {
         flex-shrink: 1.5;
     }
 }
 
-@media (max-width: 666px){
-    #project-window{
+@media (max-width: 666px) {
+    #project-window {
         flex-shrink: 1.2;
     }
-    #tasks-window{
+
+    #tasks-window {
         flex-shrink: 0.8;
     }
 }
